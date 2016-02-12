@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Cost Finder</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .site-list {
+            text-align: center;
+            margin: 30px auto;
+            font-weight: bold;
+            color: darkcyan;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .site-list-dropdown {
+            margin-left: 10px;
+            top: -2px;
+            position: relative;
+        }
+
+        #container {
+            min-width: 310px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .message{
+            text-align: center;
+            margin-top: 50px;
+            color: darkcyan;
+            padding: 10px 40px;
+        }
+
+        .message .primary{
+            font-size: 1.5em;
+        }
+
+        .message .secondary{
+            font-size: 0.8em;
+        }
+
+        .secondary a{
+            text-decoration: none;
+            font-weight: bold;
+            color: darkcyan;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//code.highcharts.com/highcharts.js"></script>
+    <script src="//code.highcharts.com/modules/exporting.js"></script>
+    <script src="countries.js"></script>
+</head>
+<body>
+<div class="site-list">
+    SELECT ONE OF THE COUNTRY: <select class="site-list-dropdown"></select>
+</div>
+<div id="container"></div>
+<div class="message">
+    <p class="primary">Above chart shows the cost of a data plan in USD when users load the homepage(non-cached) on mobile phones in various countries.</p>
+    <p class="secondary">Prices were collected from the operator with the largest marketshare in the country, using the least expensive plan with a (minimum) data allowance of 500 MB over (a minimum of) 30 days. Prices include taxes. Because these numbers are based on the least expensive plan, they are best case scenarios.</p>
+    <p class="secondary">For more information please visit <a href="http://www.itu.int/en/Pages/default.aspx" target="_blank">ITU</a> and <a href="https://timkadlec.com/" target="_blank">Tim Kadlec's</a> awesome <a href="https://whatdoesmysitecost.com/" target="_blank">site</a></p>
+</div>
+</body>
+</html>

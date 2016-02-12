@@ -6,7 +6,7 @@ $(function () {
             window.COSTFINDERDATA = data;
             __setupDropDown();
             __loadByRank(1);
-            __setupListners();
+            __setupListeners();
         },
         error: function (data) {
             console.log('ERROR');
@@ -14,7 +14,7 @@ $(function () {
         }
     });
 
-    __setupListners = function () {
+    __setupListeners = function () {
         $('select').change(function (e) {
             var rank = $("select option:selected").val();
             __loadByRank(rank);
