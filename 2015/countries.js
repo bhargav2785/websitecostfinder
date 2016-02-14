@@ -3,8 +3,11 @@ $(function () {
         method: 'GET',
         url: 'prices.json',
         success: function (data) {
+            var dataSorted = data.sort(function (a, b) {
+                return Number(a.Rank) < Number(b.Rank) ? -1 : 1;
+            });
             var countries = {};
-            $.each(data, function (i, countryData) {
+            $.each(dataSorted, function (i, countryData) {
                 var rank = countryData.Rank,
                     site = countryData.Website;
 
@@ -71,7 +74,9 @@ $(function () {
     __loadData = function (sites, prices, country) {
         var min = Math.min.apply(null, prices),
             max = Math.max.apply(null, prices),
-            sum = prices.reduce(function(a, b) { return a + b; }),
+            sum = prices.reduce(function (a, b) {
+                return a + b;
+            }),
             avg = (sum / prices.length).toFixed(3);
 
         $('#container').highcharts({

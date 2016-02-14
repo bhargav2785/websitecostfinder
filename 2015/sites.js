@@ -3,7 +3,9 @@ $(function () {
         method: 'GET',
         url: 'prices.json',
         success: function (data) {
-            window.COSTFINDERDATA = data;
+            window.COSTFINDERDATA = data.sort(function (a, b) {
+                return Number(a.Rank) < Number(b.Rank) ? -1 : 1;
+            });
             __setupDropDown();
             __loadByRank(1);
             __setupListeners();
