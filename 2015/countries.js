@@ -5,8 +5,7 @@ $(function () {
         success: function (data) {
             var dataSorted = data.sort(function (a, b) {
                 return Number(a.Rank) < Number(b.Rank) ? -1 : 1;
-            });
-            var countries = {};
+            }), countries = {};
             $.each(dataSorted, function (i, countryData) {
                 var rank = countryData.Rank,
                     site = countryData.Website;
@@ -117,7 +116,8 @@ $(function () {
             },
             series: [{
                 name: 'Price',
-                data: prices
+                data: prices,
+                color: '#ff0000'
             }]
         });
     };
