@@ -96,7 +96,7 @@ $(function () {
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Amount (in USD)'
+                    text: 'Metrics value'
                 }
             },
             tooltip: {
